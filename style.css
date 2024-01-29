@@ -1,0 +1,227 @@
+:root {
+  --primary-color: #c8bfb2;
+  --secondary-color: #e0d8cc;
+  --tertiary-color: #a7a295;
+  --text-color: #333;
+  --background-color: #f2f2f2;
+  --hover-background-color: rgba(255, 255, 255, 0.5);
+  --border-color: #333;
+  --header-footer-height: 5rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Georgia, serif;
+}
+
+html, body {
+  height: 100%;
+  background: linear-gradient(to bottom, var(--secondary-color) 0%, var(--primary-color) 50%, var(--tertiary-color) 100%);
+  color: var(--text-color);
+}
+
+/* Header */
+header {
+  animation: silverShine 6s ease infinite;
+  background: linear-gradient(270deg, var(--primary-color), var(--secondary-color), var(--tertiary-color), var(--secondary-color), var(--primary-color));
+  background-size: 400% 400%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header img {
+  padding: 1rem 0;
+  height: var(--header-footer-height);
+}
+
+/* Navigation */
+nav {
+  animation: silverShine 6s ease infinite;
+  background: linear-gradient(270deg, #c8bfb2, #e0d8cc, #a7a295, #e0d8cc, #c8bfb2);
+  background-size: 400% 400%;
+  padding: 1rem 0;
+}
+
+nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+nav li {
+    margin: 0 0.75rem;
+}
+
+nav a {
+    text-decoration: none;
+    border: solid 0.0625em #333;
+    border-radius: 0.5em;
+    color: #333;
+    font-weight: bold;
+    padding: 1em;
+    display: flex;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover, nav a:focus {
+    color: #000; 
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.5);
+}
+
+
+
+h2 {
+    font-size: 1.5rem;
+}
+
+.banner {
+    text-align: center;
+    color: #000;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  background-color: var(--background-color);
+}
+
+.footer-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+
+footer img {
+  height: var(--header-footer-height);
+}
+
+/* Media Queries */
+@media (max-width: 48em) {
+  .three-columns {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .three-columns article, .three-columns img {
+      width: 100%;
+      height: auto;
+  }
+
+  header img, footer img {
+      height: 3rem;
+  }
+  nav a {
+      padding: 0.5em;
+      font-size: 0.9em;
+  }
+  header, nav {
+      animation: none;
+  }
+}
+
+@media (max-width: 390px) {
+  .three-columns {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  nav ul {
+      padding: 0;
+      margin: 0;
+      flex-direction: column;
+  }
+
+  nav li {
+      margin: 0.15em;
+  }
+
+  nav a {
+      padding: auto;
+      font-size: 0.7em;
+      justify-content: center;
+      align-items: center;
+  }
+
+  header img {
+      height: 3.5rem;
+  }
+  nav a:hover, nav a:focus {
+      color: #000; 
+      background: rgba(255, 255, 255, 0.5);
+      transform: none;
+  }
+}
+
+
+/* Keyframes */
+@keyframes silverShine {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+/* Three columns */
+.three-columns {
+  display: flex;
+  justify-content: space-around;
+  padding: 1em;
+}
+
+.three-columns article {
+  flex: 1;
+  margin: 0.5em;
+  text-align: center;
+  overflow: hidden;
+  border: 0.125em solid #c8bfb2;
+  border-radius: 0.5em;
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding-bottom: 0.8em;
+}
+
+.three-columns img {
+width: 100%;
+height: 15rem;
+object-fit: cover;
+object-position: center;
+transition: transform 0.3s ease;
+}
+
+.three-columns article:hover {
+box-shadow: 0 0 2em rgba(0, 0, 0, 0.5);
+transform: scale(1.05);
+}
+
+/* Banner */
+.banner img {
+  width: 100%;
+  height: auto;  
+}
+
+.banner article {
+  max-width: 60%;
+  margin: 0 auto;
+}
+
+.banner p {
+font-size: 1em;  
+}
