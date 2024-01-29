@@ -3,7 +3,7 @@
   --secondary-color: #e0d8cc;
   --tertiary-color: #a7a295;
   --text-color: #333;
-  --background-color: #f2f2f2;
+  --background-color: linear-gradient(to bottom, var(--secondary-color) 0%, var(--primary-color) 50%, var(--tertiary-color) 100%);
   --hover-background-color: rgba(255, 255, 255, 0.5);
   --border-color: #333;
   --header-footer-height: 5rem;
@@ -18,14 +18,12 @@
 
 html, body {
   height: 100%;
-  background: linear-gradient(to bottom, var(--secondary-color) 0%, var(--primary-color) 50%, var(--tertiary-color) 100%);
+  background: var(--background-color);
   color: var(--text-color);
 }
 
 /* Header */
 header {
-  animation: silverShine 6s ease infinite;
-  background: linear-gradient(270deg, var(--primary-color), var(--secondary-color), var(--tertiary-color), var(--secondary-color), var(--primary-color));
   background-size: 400% 400%;
   display: flex;
   justify-content: center;
@@ -39,9 +37,7 @@ header img {
 
 /* Navigation */
 nav {
-  animation: silverShine 6s ease infinite;
-  background: linear-gradient(270deg, #c8bfb2, #e0d8cc, #a7a295, #e0d8cc, #c8bfb2);
-  background-size: 400% 400%;
+  background: var(--background-color);
   padding: 1rem 0;
 }
 
@@ -214,14 +210,17 @@ transform: scale(1.05);
 /* Banner */
 .banner img {
   width: 100%;
-  height: auto;  
+  height: auto;
 }
 
 .banner article {
-  max-width: 60%;
   margin: 0 auto;
 }
 
 .banner p {
-font-size: 1em;  
+  width: 100%;
+  font-size: 3em;
+  animation: silverShine 6s ease infinite;
+  background: linear-gradient(270deg, var(--primary-color), var(--secondary-color), var(--tertiary-color), var(--secondary-color), var(--primary-color));
+  background-size: 400% 400%;
 }
