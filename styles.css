@@ -87,7 +87,7 @@ footer {
   display: flex;
   justify-content: space-between;
   padding: 1em;
-  background-color: var(--background-color);
+  background-color: var(--secondary-color);
 }
 
 .footer-col {
